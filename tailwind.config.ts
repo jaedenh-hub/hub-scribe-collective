@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Oswald', 'sans-serif'],
-        body: ['Source Sans 3', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,13 +52,14 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         hub: {
-          amber: "hsl(var(--hub-amber))",
-          terracotta: "hsl(var(--hub-terracotta))",
-          charcoal: "hsl(var(--hub-charcoal))",
-          dark: "hsl(var(--hub-dark))",
+          electric: "hsl(var(--hub-electric))",
+          "electric-glow": "hsl(var(--hub-electric-glow))",
+          purple: "hsl(var(--hub-purple))",
+          midnight: "hsl(var(--hub-midnight))",
+          deep: "hsl(var(--hub-deep))",
           surface: "hsl(var(--hub-surface))",
           "surface-hover": "hsl(var(--hub-surface-hover))",
-          "gold-glow": "hsl(var(--hub-gold-glow))",
+          cyan: "hsl(var(--hub-cyan))",
           "text-dim": "hsl(var(--hub-text-dim))",
         },
         sidebar: {

@@ -23,16 +23,16 @@ const CategoryPage = () => {
       <Navbar />
       <main className="pt-16">
         {/* Category Header */}
-        <div className="bg-hub-dark border-b border-border">
+        <div className="bg-hub-deep border-b border-border/50">
           <div className="container mx-auto px-4 py-12">
-            <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-display text-xs tracking-widest mb-6">
+            <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 font-display text-xs font-medium tracking-wide mb-6">
               <ArrowLeft className="w-4 h-4" />
-              BACK TO HOME
+              Back to Home
             </Link>
-            <div className="flex items-center gap-4">
-              <div className="w-1.5 h-12 bg-primary" />
+            <div className="flex items-center gap-3">
+              <div className="w-1 h-10 bg-primary rounded-full" />
               <div>
-                <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">{category.name.toUpperCase()}</h1>
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground">{category.name}</h1>
                 <p className="text-muted-foreground font-body mt-1">
                   {categoryStories.length} {categoryStories.length === 1 ? "story" : "stories"}
                 </p>
