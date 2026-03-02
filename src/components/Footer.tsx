@@ -3,18 +3,18 @@ import { categories } from "@/data/stories";
 
 const Footer = () => {
   return (
-    <footer className="bg-hub-dark border-t border-border">
+    <footer className="bg-hub-deep border-t border-border/50">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-                <span className="font-display text-primary-foreground text-lg font-bold leading-none">H</span>
+            <div className="flex items-center gap-2.5 mb-4">
+              <div className="w-8 h-8 rounded-md bg-primary/10 border border-primary/30 flex items-center justify-center">
+                <span className="font-display text-primary text-lg font-bold leading-none">H</span>
               </div>
-              <span className="font-display text-xl font-bold tracking-wider">
-                <span className="text-primary">HATTIESBURG</span>
-                <span className="text-foreground ml-1">HUB</span>
+              <span className="font-display text-lg font-semibold tracking-tight">
+                <span className="text-primary">Hattiesburg</span>
+                <span className="text-foreground ml-1">Hub</span>
               </span>
             </div>
             <p className="text-muted-foreground font-body text-sm max-w-md leading-relaxed">
@@ -25,13 +25,13 @@ const Footer = () => {
 
           {/* Categories */}
           <div>
-            <h4 className="font-display text-xs tracking-widest text-muted-foreground mb-4">SECTIONS</h4>
+            <h4 className="font-display text-xs font-medium tracking-wide text-muted-foreground mb-4">Sections</h4>
             <div className="flex flex-col gap-2">
               {categories.map((cat) => (
                 <Link
                   key={cat.slug}
                   to={`/category/${cat.slug}`}
-                  className="text-foreground hover:text-primary transition-colors font-body text-sm"
+                  className="text-foreground/70 hover:text-primary transition-colors duration-300 font-body text-sm"
                 >
                   {cat.name}
                 </Link>
@@ -41,17 +41,17 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-display text-xs tracking-widest text-muted-foreground mb-4">CONNECT</h4>
+            <h4 className="font-display text-xs font-medium tracking-wide text-muted-foreground mb-4">Connect</h4>
             <div className="flex flex-col gap-2 font-body text-sm">
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Contact Us</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Submit a Story</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Advertise</a>
-              <a href="#" className="text-foreground hover:text-primary transition-colors">About</a>
+              <a href="#" className="text-foreground/70 hover:text-primary transition-colors duration-300">Contact Us</a>
+              <a href="#" className="text-foreground/70 hover:text-primary transition-colors duration-300">Submit a Story</a>
+              <a href="#" className="text-foreground/70 hover:text-primary transition-colors duration-300">Advertise</a>
+              <a href="#" className="text-foreground/70 hover:text-primary transition-colors duration-300">About</a>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-6 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-hub-text-dim text-xs font-body">
             © 2026 Hattiesburg Hub. All rights reserved.
           </p>

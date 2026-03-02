@@ -6,11 +6,11 @@ import { stories } from "@/data/stories";
 import { ArrowLeft, Clock, User } from "lucide-react";
 
 const categoryColors: Record<string, string> = {
-  community: "bg-primary",
-  business: "bg-hub-terracotta",
-  culture: "bg-emerald-600",
-  sports: "bg-blue-600",
-  opinion: "bg-violet-600",
+  community: "bg-primary/15 text-primary",
+  business: "bg-hub-cyan/15 text-hub-cyan",
+  culture: "bg-hub-purple/15 text-secondary",
+  sports: "bg-hub-electric-glow/15 text-hub-electric-glow",
+  opinion: "bg-muted text-muted-foreground",
 };
 
 const StoryPage = () => {
@@ -44,12 +44,12 @@ const StoryPage = () => {
             <div className="container mx-auto px-4 pb-8">
               <Link
                 to={`/category/${story.category}`}
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-display text-xs tracking-widest mb-4"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300 font-display text-xs font-medium tracking-wide mb-4"
               >
                 <ArrowLeft className="w-4 h-4" />
-                BACK TO {story.category.toUpperCase()}
+                Back to {story.category}
               </Link>
-              <span className={`category-badge px-2 py-1 text-foreground ${categoryColors[story.category] || "bg-muted"}`}>
+              <span className={`category-badge px-2.5 py-1 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
                 {story.category}
               </span>
               <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight max-w-3xl">
@@ -63,7 +63,7 @@ const StoryPage = () => {
         <div className="container mx-auto px-4 py-10">
           <div className="max-w-3xl">
             {/* Meta */}
-            <div className="flex items-center gap-6 mb-8 pb-6 border-b border-border">
+            <div className="flex items-center gap-6 mb-8 pb-6 border-b border-border/50">
               <div className="flex items-center gap-2 text-muted-foreground text-sm font-body">
                 <User className="w-4 h-4" />
                 {story.author}
@@ -84,10 +84,10 @@ const StoryPage = () => {
 
           {/* Related Stories */}
           {relatedStories.length > 0 && (
-            <div className="mt-16 pt-12 border-t border-border">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-1 h-6 bg-primary" />
-                <h2 className="font-display text-xl font-bold text-foreground">RELATED STORIES</h2>
+            <div className="mt-16 pt-12 border-t border-border/50">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1 h-6 bg-primary rounded-full" />
+                <h2 className="font-display text-xl font-bold text-foreground">Related Stories</h2>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {relatedStories.map((s) => (

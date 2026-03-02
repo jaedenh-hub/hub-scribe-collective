@@ -8,53 +8,53 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
-              <span className="font-display text-primary-foreground text-lg font-bold leading-none">H</span>
+          <Link to="/" className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-md bg-primary/10 border border-primary/30 flex items-center justify-center glow-primary">
+              <span className="font-display text-primary text-lg font-bold leading-none">H</span>
             </div>
-            <div className="font-display text-xl font-bold tracking-wider">
-              <span className="text-primary">HATTIESBURG</span>
-              <span className="text-foreground ml-1">HUB</span>
+            <div className="font-display text-lg font-semibold tracking-tight">
+              <span className="text-primary">Hattiesburg</span>
+              <span className="text-foreground ml-1">Hub</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             <Link
               to="/"
-              className={`gold-underline font-display text-sm tracking-widest transition-colors ${
-                location.pathname === "/" ? "text-primary" : "text-foreground hover:text-primary"
+              className={`glow-underline font-display text-[13px] font-medium tracking-wide transition-colors ${
+                location.pathname === "/" ? "text-primary" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              HOME
+              Home
             </Link>
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={`/category/${cat.slug}`}
-                className={`gold-underline font-display text-sm tracking-widest transition-colors ${
-                  location.pathname === `/category/${cat.slug}` ? "text-primary" : "text-foreground hover:text-primary"
+                className={`glow-underline font-display text-[13px] font-medium tracking-wide transition-colors ${
+                  location.pathname === `/category/${cat.slug}` ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {cat.name.toUpperCase()}
+                {cat.name}
               </Link>
             ))}
           </div>
 
           {/* Right side */}
-          <div className="flex items-center gap-4">
-            <button className="text-muted-foreground hover:text-primary transition-colors">
-              <Search className="w-5 h-5" />
+          <div className="flex items-center gap-3">
+            <button className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted/50 transition-all">
+              <Search className="w-4 h-4" />
             </button>
             <button
-              className="md:hidden text-foreground"
+              className="md:hidden p-2 text-foreground"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -62,23 +62,23 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-t border-border">
-          <div className="px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden glass border-t border-border/50">
+          <div className="px-4 py-4 flex flex-col gap-1">
             <Link
               to="/"
               onClick={() => setMobileOpen(false)}
-              className="font-display text-sm tracking-widest text-foreground hover:text-primary py-2"
+              className="font-display text-sm font-medium text-foreground hover:text-primary py-2.5 px-3 rounded-md hover:bg-muted/50 transition-all"
             >
-              HOME
+              Home
             </Link>
             {categories.map((cat) => (
               <Link
                 key={cat.slug}
                 to={`/category/${cat.slug}`}
                 onClick={() => setMobileOpen(false)}
-                className="font-display text-sm tracking-widest text-foreground hover:text-primary py-2"
+                className="font-display text-sm font-medium text-muted-foreground hover:text-primary py-2.5 px-3 rounded-md hover:bg-muted/50 transition-all"
               >
-                {cat.name.toUpperCase()}
+                {cat.name}
               </Link>
             ))}
           </div>
