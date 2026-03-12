@@ -27,6 +27,7 @@ const Footer = () => {
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
+          <NewsletterSignup variant="inline" />
         </div>
 
         {/* Bottom: Compact link grid */}
