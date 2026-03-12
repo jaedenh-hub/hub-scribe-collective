@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Send, Check, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const storySchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
