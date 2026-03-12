@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { categories } from "@/data/stories";
 import { ArrowUpRight } from "lucide-react";
 import logoFull from "@/assets/logo-full.png";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const Footer = () => {
   return (
