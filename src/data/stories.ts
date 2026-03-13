@@ -30,7 +30,7 @@ export const stories: Story[] = [
     category: "community",
     author: "Marcus Williams",
     date: "Feb 28, 2026",
-    image: "/featured-community.jpg",
+    image: "/story-downtown-revitalization.jpg",
     slug: "downtown-revitalization-project",
     featured: true,
     content: "The City of Hattiesburg officially broke ground on its ambitious downtown revitalization project this week, marking the beginning of a transformation that city officials say will redefine the urban core for decades to come.\n\nThe $12 million investment includes new mixed-use buildings, expanded green spaces along the Leaf River corridor, and modernized infrastructure that will support both pedestrian and cycling traffic.\n\n\"This is more than a construction project,\" Mayor Thompson said at the groundbreaking ceremony. \"This is a statement about who we are as a community and where we're headed.\"\n\nThe project is expected to create over 200 construction jobs and attract an estimated 50 new businesses to the downtown area over the next five years."
