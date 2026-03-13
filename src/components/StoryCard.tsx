@@ -90,7 +90,7 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
   }
 
   return (
-    <Link to={`/story/${story.slug}`} className="group block">
+    <CardWrapper story={story} className="group block">
       <div className="overflow-hidden rounded-lg">
         <img
           src={story.image}
@@ -100,9 +100,12 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
       </div>
       <div className="pt-4">
         <div className="flex items-center justify-between">
-          <span className={`category-badge px-2.5 py-0.5 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
-            {story.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className={`category-badge px-2.5 py-0.5 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
+              {story.category}
+            </span>
+            {story.external && <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />}
+          </div>
           <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
         </div>
         <h3 className="font-display text-lg font-semibold text-foreground mt-3 mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
@@ -115,7 +118,7 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
           <span>{story.date}</span>
         </div>
       </div>
-    </Link>
+    </CardWrapper>
   );
 };
 
