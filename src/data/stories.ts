@@ -171,7 +171,7 @@ export const stories: Story[] = [
     category: "sports",
     author: "DeShawn Porter",
     date: "Feb 20, 2026",
-    image: "/featured-sports.jpg",
+    image: "/story-golden-eagles.jpg",
     slug: "golden-eagles-football-preview",
     featured: true,
     content: "The University of Southern Mississippi Golden Eagles are generating buzz heading into the 2026 football season, with what analysts are calling the program's best recruiting class in over a decade.\n\nHead Coach Williams has brought in a wave of talented athletes, including four-star recruits from across the Southeast, while retaining key returning starters on both sides of the ball."
