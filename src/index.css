@@ -6,6 +6,61 @@
 
 @layer base {
   :root {
+    --background: 0 0% 98%;
+    --foreground: 228 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 228 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 228 20% 12%;
+
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 92%;
+    --muted-foreground: 225 12% 40%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 217 91% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 228 20% 12%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 92%;
+    --sidebar-accent-foreground: 228 20% 12%;
+    --sidebar-border: 220 13% 87%;
+    --sidebar-ring: 217 91% 50%;
+
+    /* Custom tokens */
+    --hub-electric: 217 91% 50%;
+    --hub-electric-glow: 217 100% 60%;
+    --hub-purple: 250 60% 55%;
+    --hub-midnight: 0 0% 98%;
+    --hub-deep: 220 14% 95%;
+    --hub-surface: 0 0% 100%;
+    --hub-surface-hover: 220 14% 96%;
+    --hub-cyan: 190 80% 45%;
+    --hub-text-dim: 225 12% 55%;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
     --background: 228 20% 6%;
     --foreground: 220 20% 95%;
 
@@ -34,8 +89,6 @@
     --input: 228 12% 16%;
     --ring: 217 91% 60%;
 
-    --radius: 0.5rem;
-
     --sidebar-background: 228 18% 8%;
     --sidebar-foreground: 220 20% 95%;
     --sidebar-primary: 217 91% 60%;
@@ -55,9 +108,6 @@
     --hub-surface-hover: 228 18% 14%;
     --hub-cyan: 190 80% 55%;
     --hub-text-dim: 225 12% 40%;
-
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
   }
 }
 
@@ -147,7 +197,7 @@
 
 /* Glass effect */
 .glass {
-  background: hsl(228 18% 10% / 0.6);
+  background: hsl(var(--card) / 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
