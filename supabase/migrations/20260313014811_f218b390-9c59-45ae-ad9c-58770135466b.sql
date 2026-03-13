@@ -1,0 +1,1 @@
+ALTER TABLE public.newsletter_subscribers ADD COLUMN phone_number TEXT DEFAULT NULL;
