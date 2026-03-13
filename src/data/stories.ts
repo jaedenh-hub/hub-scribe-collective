@@ -218,7 +218,7 @@ export const stories: Story[] = [
     category: "opinion",
     author: "Rev. Patricia Dawson",
     date: "Feb 18, 2026",
-    image: "/featured-opinion.jpg",
+    image: "/story-young-leaders.jpg",
     slug: "hattiesburgs-young-leaders",
     content: "I've lived in Hattiesburg for over 40 years, and I've never seen anything quite like what's happening now. A new generation of leaders is emerging—not from the traditional power structures, but from the streets, the campuses, and the community organizations that have always been the true backbone of this city.\n\nThese young people are starting businesses, organizing neighborhood cleanups, running for local office, and most importantly, they're staying."
   },
