@@ -251,7 +251,7 @@ export const stories: Story[] = [
     category: "opinion",
     author: "Rev. Patricia Dawson",
     date: "Jan 22, 2026",
-    image: "/featured-opinion.jpg",
+    image: "/story-local-journalism.jpg",
     slug: "support-local-journalism",
     content: "When was the last time you read a story about your neighborhood—your actual neighborhood—in a major news outlet? For most of us, the answer is never.\n\nThat's why local journalism matters. It's the only form of media that holds our city council accountable, covers our school board meetings, and tells the stories of the people who live next door."
   },
