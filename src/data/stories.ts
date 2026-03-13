@@ -240,7 +240,7 @@ export const stories: Story[] = [
     category: "opinion",
     author: "Angela Harris",
     date: "Feb 3, 2026",
-    image: "/featured-opinion.jpg",
+    image: "/story-longleaf-trace.jpg",
     slug: "invest-in-longleaf-trace",
     content: "The Longleaf Trace is more than a trail—it's where Hattiesburg comes together. Runners, cyclists, families, and dog-walkers share this 44-mile corridor every single day.\n\nBut the truth is, we're not investing enough in its upkeep. Sections are deteriorating, lighting is inadequate, and the northern extensions remain unpaved. If we truly value this asset, our budget should reflect it."
   },
