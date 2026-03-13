@@ -53,7 +53,7 @@ export const stories: Story[] = [
     category: "community",
     author: "Tanya Ford",
     date: "Feb 10, 2026",
-    image: "/featured-community.jpg",
+    image: "/story-tree-planting.jpg",
     slug: "longleaf-trace-tree-planting",
     content: "Over 200 volunteers gathered Saturday morning along the Longleaf Trace to plant 500 native trees as part of the Hattiesburg Green Alliance's 'Roots for the Future' campaign.\n\nThe initiative, funded by a $150,000 state conservation grant, targets a two-mile stretch between downtown and the university district. Organizers chose native longleaf pines and hardwoods to restore the corridor's ecological heritage.\n\n\"This trail is the spine of our city,\" said Green Alliance director Tamika Reed. \"Making it greener makes the whole community healthier.\""
   },
