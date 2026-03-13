@@ -229,7 +229,7 @@ export const stories: Story[] = [
     category: "opinion",
     author: "Dr. Leonard Graves",
     date: "Feb 11, 2026",
-    image: "/featured-opinion.jpg",
+    image: "/story-school-funding.jpg",
     slug: "rethink-school-funding",
     content: "Every year, Mississippi's education funding formula leaves districts like Hattiesburg scrambling to do more with less. As an educator who has spent 25 years in Forrest County classrooms, I've watched this pattern repeat itself while our students pay the price.\n\nIt's time for a community-driven conversation about equitable school funding—one that puts students, not politics, at the center."
   },
