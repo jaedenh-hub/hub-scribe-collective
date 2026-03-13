@@ -19,18 +19,21 @@ export type Database = {
           email: string
           id: string
           is_active: boolean
+          phone_number: string | null
           subscribed_at: string
         }
         Insert: {
           email: string
           id?: string
           is_active?: boolean
+          phone_number?: string | null
           subscribed_at?: string
         }
         Update: {
           email?: string
           id?: string
           is_active?: boolean
+          phone_number?: string | null
           subscribed_at?: string
         }
         Relationships: []
