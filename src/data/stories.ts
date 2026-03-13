@@ -100,7 +100,7 @@ export const stories: Story[] = [
     category: "business",
     author: "James Holliday",
     date: "Feb 8, 2026",
-    image: "/featured-business.jpg",
+    image: "/story-micro-loans.jpg",
     slug: "credit-union-micro-loans",
     content: "Pine Belt Credit Union has introduced a micro-loan program specifically designed for minority-owned and first-time small businesses in Forrest County.\n\nThe program offers loans between $5,000 and $25,000 at interest rates 2% below market average, with flexible repayment schedules and free business mentorship through a partnership with USM's College of Business."
   },
