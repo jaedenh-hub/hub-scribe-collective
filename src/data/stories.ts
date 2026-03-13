@@ -183,7 +183,7 @@ export const stories: Story[] = [
     category: "sports",
     author: "DeShawn Porter",
     date: "Feb 17, 2026",
-    image: "/featured-sports.jpg",
+    image: "/story-basketball-champs.jpg",
     slug: "tigers-state-championship",
     content: "The Hattiesburg High Tigers are state champions. In a dramatic overtime finish at the Mississippi Coliseum in Jackson, the Tigers defeated Meridian High 68-65 to claim the 6A boys basketball title—the school's first state championship in 15 years.\n\nSenior guard Jaylen Carter scored 28 points, including the go-ahead three-pointer with 12 seconds remaining in overtime."
   },
