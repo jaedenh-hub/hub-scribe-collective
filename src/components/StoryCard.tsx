@@ -33,7 +33,7 @@ const categoryColors: Record<string, string> = {
 const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
   if (variant === "large") {
     return (
-      <Link to={`/story/${story.slug}`} className="group block relative overflow-hidden rounded-lg">
+      <CardWrapper story={story} className="group block relative overflow-hidden rounded-lg">
         <div className="aspect-[4/3] overflow-hidden">
           <img
             src={story.image}
@@ -43,9 +43,12 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <span className={`category-badge px-2.5 py-1 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
-            {story.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className={`category-badge px-2.5 py-1 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
+              {story.category}
+            </span>
+            {story.external && <ExternalLink className="w-3.5 h-3.5 text-muted-foreground" />}
+          </div>
           <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-3 mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
             {story.title}
           </h3>
@@ -56,7 +59,7 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
             <span>{story.date}</span>
           </div>
         </div>
-      </Link>
+      </CardWrapper>
     );
   }
 
