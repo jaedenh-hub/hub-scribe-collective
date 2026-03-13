@@ -65,7 +65,7 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
 
   if (variant === "horizontal") {
     return (
-      <Link to={`/story/${story.slug}`} className="group flex gap-4 items-start">
+      <CardWrapper story={story} className="group flex gap-4 items-start">
         <div className="w-28 h-20 flex-shrink-0 overflow-hidden rounded-md">
           <img
             src={story.image}
@@ -74,15 +74,18 @@ const StoryCard = ({ story, variant = "default" }: StoryCardProps) => {
           />
         </div>
         <div className="flex-1 min-w-0">
-          <span className={`category-badge px-2 py-0.5 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
-            {story.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className={`category-badge px-2 py-0.5 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
+              {story.category}
+            </span>
+            {story.external && <ExternalLink className="w-3 h-3 text-muted-foreground" />}
+          </div>
           <h4 className="font-display text-sm font-semibold text-foreground mt-1.5 group-hover:text-primary transition-colors duration-300 leading-snug line-clamp-2">
             {story.title}
           </h4>
           <span className="text-xs text-hub-text-dim font-body">{story.date}</span>
         </div>
-      </Link>
+      </CardWrapper>
     );
   }
 
