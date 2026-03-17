@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { X, ArrowRight, Sparkles } from "lucide-react";
+import { X, ArrowRight, Newspaper } from "lucide-react";
 import logoSubmark from "@/assets/logo-submark.png";
 
 const WelcomeLightbox = () => {
