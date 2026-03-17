@@ -461,4 +461,7 @@ Now an IT professional and small business owner, Ferguson said McCarty's life co
 ];
 
 export const trendingStories = stories.filter(s => s.external).slice(0, 5);
-export const featuredStories = stories.filter(s => s.featured);
+export const featuredStories = [
+  ...stories.filter(s => s.featured && s.original),
+  ...stories.filter(s => s.featured && !s.original),
+];
