@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Mail, Phone, CheckCircle, Sparkles, User } from "lucide-react";
+import { ArrowRight, Mail, Phone, CheckCircle, Newspaper, User } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import logoFull from "@/assets/logo-full.png";
