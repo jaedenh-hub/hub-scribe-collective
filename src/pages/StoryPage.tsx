@@ -1,9 +1,10 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StoryCard from "@/components/StoryCard";
 import { stories } from "@/data/stories";
-import { ArrowLeft, Clock, User } from "lucide-react";
+import { ArrowLeft, Clock, User, ChevronLeft, ChevronRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const categoryColors: Record<string, string> = {
@@ -12,6 +13,64 @@ const categoryColors: Record<string, string> = {
   culture: "bg-hub-purple/15 text-secondary",
   sports: "bg-hub-electric-glow/15 text-hub-electric-glow",
   opinion: "bg-muted text-muted-foreground",
+};
+
+const PhotoGallery = ({ images, title }: { images: string[]; title: string }) => {
+  const [current, setCurrent] = useState(0);
+
+  if (images.length <= 1) return null;
+
+  return (
+    <div className="my-10">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-1 h-5 bg-primary rounded-full" />
+        <h3 className="font-display text-sm font-medium tracking-wide text-muted-foreground uppercase">Photo Gallery</h3>
+      </div>
+
+      {/* Main image */}
+      <div className="relative rounded-lg overflow-hidden bg-hub-deep">
+        <img
+          src={images[current]}
+          alt={`${title} - Photo ${current + 1}`}
+          className="w-full max-h-[500px] object-contain mx-auto"
+        />
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={() => setCurrent((c) => (c - 1 + images.length) % images.length)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur flex items-center justify-center text-foreground hover:bg-background transition-colors"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => setCurrent((c) => (c + 1) % images.length)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/80 backdrop-blur flex items-center justify-center text-foreground hover:bg-background transition-colors"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-background/80 backdrop-blur px-3 py-1 rounded-full text-xs text-foreground font-body">
+              {current + 1} / {images.length}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Thumbnails */}
+      <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
+        {images.map((img, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-16 h-16 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all ${
+              i === current ? "border-primary opacity-100" : "border-transparent opacity-60 hover:opacity-90"
+            }`}
+          >
+            <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const StoryPage = () => {
@@ -26,6 +85,9 @@ const StoryPage = () => {
       </div>
     );
   }
+
+  const contentParagraphs = (story.content || story.excerpt).split("\n\n");
+  const midPoint = Math.ceil(contentParagraphs.length / 3);
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,6 +113,11 @@ const StoryPage = () => {
                 <ArrowLeft className="w-4 h-4" />
                 Back to {story.category}
               </Link>
+              {story.original && (
+                <span className="inline-flex items-center gap-1.5 bg-primary/20 text-primary px-2.5 py-1 rounded-sm font-display text-[10px] font-bold tracking-widest uppercase mr-2">
+                  HattiesburgHub Original
+                </span>
+              )}
               <span className={`category-badge px-2.5 py-1 rounded-sm ${categoryColors[story.category] || "bg-muted text-muted-foreground"}`}>
                 {story.category}
               </span>
@@ -76,10 +143,22 @@ const StoryPage = () => {
               </div>
             </div>
 
-            {/* Content */}
+            {/* Content - first section */}
             <div className="font-body text-foreground/90 leading-relaxed text-lg space-y-6">
-              {(story.content || story.excerpt).split("\n\n").map((paragraph, i) => (
+              {contentParagraphs.slice(0, midPoint).map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
+              ))}
+            </div>
+
+            {/* Photo Gallery inserted mid-article */}
+            {story.images && story.images.length > 1 && (
+              <PhotoGallery images={story.images} title={story.title} />
+            )}
+
+            {/* Content - remaining */}
+            <div className="font-body text-foreground/90 leading-relaxed text-lg space-y-6">
+              {contentParagraphs.slice(midPoint).map((paragraph, i) => (
+                <p key={i + midPoint}>{paragraph}</p>
               ))}
             </div>
           </div>
