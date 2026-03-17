@@ -12,7 +12,7 @@ const LeadStory = () => {
       <div className="container mx-auto px-4">
         {/* Section label */}
         <div className="flex items-center gap-3 mb-6">
-          <Sparkles className="w-4 h-4 text-primary" />
+          <Star className="w-4 h-4 text-primary" />
           <span className="font-display text-xs font-bold tracking-widest text-primary uppercase">Featured Original</span>
           <div className="flex-1 h-[1px] bg-border/50" />
           <span className="font-display text-xs text-muted-foreground">{leadStory.date}</span>
